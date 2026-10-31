@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Let’s talk — Anushka Dabhade</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Inter:wght@300;400;500;600&family=Caveat:wght@500;700&display=swap" rel="stylesheet">
+<style>
+:root{--cream:#E8DCC6;--burg:#722F37;--esp:#2a1a18;--card:#F4ECD9;
+  --serif:'Playfair Display',Georgia,serif;--sans:'Inter',system-ui,-apple-system,'Segoe UI',sans-serif;--hand:'Caveat','Segoe Print',cursive;
+  box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+*,*::before,*::after{box-sizing:inherit}
+body{margin:0;background:var(--cream);color:var(--esp);font-family:var(--sans);min-height:100vh;overflow-x:hidden}
+body::before{content:"";position:fixed;inset:0;pointer-events:none;opacity:.5;mix-blend-mode:multiply;background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='200' height='200'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3'/><feColorMatrix values='0 0 0 0 .3  0 0 0 0 .2  0 0 0 0 .15  0 0 0 .22 0'/></filter><rect width='200' height='200' filter='url(%23n)'/></svg>")}
+.dd{position:fixed;color:var(--burg);fill:none;stroke:currentColor;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round;pointer-events:none}
+.dd.f{fill:currentColor;stroke:none;animation:tw 3.4s ease-in-out infinite}
+@keyframes tw{0%,100%{transform:scale(.7) rotate(0);opacity:.6}50%{transform:scale(1.15) rotate(25deg);opacity:1}}
+header{position:relative;z-index:2;display:flex;justify-content:space-between;align-items:center;padding:calc(22px + env(safe-area-inset-top,0px)) 4vw 10px;font-size:10px;letter-spacing:.22em;text-transform:uppercase;font-weight:500}
+header .logo{font-family:var(--serif);font-weight:700;letter-spacing:.18em;font-size:15px;color:var(--esp);text-decoration:none}
+header a.back{color:var(--burg);text-decoration:none;border:1.5px solid var(--burg);padding:9px 18px;border-radius:999px;transition:.3s}
+header a.back:hover{background:var(--burg);color:var(--cream)}
+main{position:relative;z-index:2;max-width:980px;margin:0 auto;padding:6vh 4vw 10vh}
+.eyebrow{font-size:10px;letter-spacing:.34em;text-transform:uppercase;color:var(--burg);font-weight:600;display:flex;align-items:center;gap:14px;margin-bottom:16px}
+.eyebrow::before{content:"";width:34px;border-top:2px dotted var(--burg)}
+h1{font-family:var(--serif);font-weight:900;text-transform:uppercase;font-size:clamp(2.6rem,7vw,5.8rem);line-height:.95;margin:0 0 20px;letter-spacing:-.01em}
+h1 em{font-style:italic;font-weight:700;color:var(--burg)}
+p.lead{max-width:540px;font-size:15px;line-height:1.8;margin:0 0 34px}
+.form{position:relative;background:var(--card);border:2px solid var(--burg);box-shadow:9px 9px 0 var(--burg);padding:0;min-height:520px;overflow:hidden}
+.form iframe{display:block;width:100%;height:max(78vh,640px);border:0;background:var(--card)}
+.soon{padding:60px 30px;text-align:center}
+.soon b{font-family:var(--serif);font-size:clamp(1.5rem,3vw,2.2rem);display:block;margin-bottom:10px}
+.soon span{font-family:var(--hand);font-size:26px;color:var(--burg)}
+.alt{display:flex;flex-wrap:wrap;gap:14px;margin-top:34px}
+.alt a{font-size:10.5px;letter-spacing:.22em;text-transform:uppercase;font-weight:600;color:var(--cream);background:var(--burg);text-decoration:none;padding:16px 26px;border-radius:999px;box-shadow:5px 5px 0 var(--esp);transition:.25s}
+.alt a:hover{transform:translate(3px,3px);box-shadow:2px 2px 0 var(--esp)}
+</style>
+</head>
+<body>
+<svg class="dd f" style="left:8vw;top:24vh;width:30px;height:30px" viewBox="-12 -12 24 24"><path d="M0-11Q1-1 11 0Q1 1 0 11Q-1 1-11 0Q-1-1 0-11Z"/></svg>
+<svg class="dd" style="right:7vw;top:20vh;width:46px;height:46px" viewBox="0 0 40 40"><path d="M26 4A17 17 0 1 0 36 28A14 14 0 0 1 26 4Z"/></svg>
+<svg class="dd f" style="right:12vw;bottom:14vh;width:22px;height:22px;animation-delay:-1.2s" viewBox="-12 -12 24 24"><path d="M0-11Q1-1 11 0Q1 1 0 11Q-1 1-11 0Q-1-1 0-11Z"/></svg>
+
+<header>
+  <a class="logo" href="Anushka%20Dabhade%20%E2%80%94%20A%20cosmic%20kind%20of%20builder.html">ANUSHKA</a>
+  <a class="back" href="Anushka%20Dabhade%20%E2%80%94%20A%20cosmic%20kind%20of%20builder.html">← Back to portfolio</a>
+</header>
+
+<main>
+  <div class="eyebrow">Contact</div>
+  <h1>Let’s <em>talk</em></h1>
+  <p class="lead">Research collaboration, an internship, or just an idea you’d like to bounce around? Send me a note below and I’ll get back to you.</p>
+
+  <div class="form" id="form"></div>
+
+  <div class="alt">
+    <a href="mailto:anushkadabhade134@gmail.com">Email me</a>
+    <a href="https://www.linkedin.com/in/anushka-dabhade-936b16349" target="_blank" rel="noopener">LinkedIn</a>
+    <a href="https://github.com/Anushkad134" target="_blank" rel="noopener">GitHub</a>
+  </div>
+</main>
+
+<script>
+  // ▶ PASTE YOUR GOOGLE FORM LINK HERE
+  // In Google Forms: Send → the "< >" (embed) tab → copy the address inside src="...". It looks like
+  // https://docs.google.com/forms/d/e/XXXXXXXX/viewform?embedded=true
+  var FORM_URL = 'https://docs.google.com/forms/d/e/1FAIpQLSdPrGqhSA_kpWr5Sn8ko-MU9GZtPnFBHOYFsKmGnTM3jFpXYA/viewform?embedded=true';
+
+  var box = document.getElementById('form');
+  if (FORM_URL) {
+    var f = document.createElement('iframe');
+    f.src = FORM_URL;
+    f.title = 'Contact form';
+    f.loading = 'lazy';
+    f.innerHTML = 'Loading…';
+    box.appendChild(f);
+  } else {
+    box.innerHTML = '<div class="soon"><b>The form is on its way</b><span>for now, email me directly ✦</span></div>';
+  }
+</script>
+</body>
+</html>

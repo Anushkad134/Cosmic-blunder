@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Let&rsquo;s talk &mdash; Anushka Dabhade</title>
+<meta name="description" content="Get in touch with Anushka Dabhade for research collaborations, AI/ML engineering, internships, or project discussions.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700;800;900&family=Syncopate:wght@400;700&family=Manrope:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --red:#DD0404; --crim:#9C0205; --plum:#160917; --bg:#0b040c; --card:rgba(18,6,20,.82); --ink:#f8eff2; --dim:rgba(248,239,242,.82);
+  --disp:'Syncopate','Michroma',system-ui,sans-serif;
+  --name:'Big Shoulders Display','Anton','Oswald','Impact','Arial Narrow',sans-serif;
+  --ui:'Manrope',system-ui,-apple-system,'Segoe UI',sans-serif;
+  --mono:'IBM Plex Mono',ui-monospace,Menlo,Consolas,monospace;
+  --glow:drop-shadow(0 0 8px rgba(221,4,4,.7)) drop-shadow(0 0 22px rgba(221,4,4,.4));
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
+}
+*,*::before,*::after{box-sizing:inherit}
+html{scroll-behavior:smooth}
+body{
+  margin:0;
+  background:var(--bg);
+  color:var(--ink);
+  font-family:var(--ui);
+  font-size:14.4px;
+  line-height:1.7;
+  -webkit-font-smoothing:antialiased;
+  min-height:100vh;
+  position:relative;
+  overflow-x:hidden;
+}
+
+/* Background layers identical to portfolio */
+canvas#c{position:fixed;inset:0;width:100%;height:100%;z-index:0;display:block;pointer-events:none}
+.grain{position:fixed;inset:-50%;z-index:40;pointer-events:none;opacity:.05;background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2'/></filter><rect width='160' height='160' filter='url(%23n)'/></svg>");animation:gr 1s steps(4) infinite}
+@keyframes gr{0%{transform:translate(0,0)}25%{transform:translate(-3%,2%)}50%{transform:translate(2%,-3%)}75%{transform:translate(-2%,-1%)}100%{transform:translate(0,0)}}
+.vig{position:fixed;inset:0;z-index:2;pointer-events:none;background:radial-gradient(ellipse at 50% 50%,transparent 38%,rgba(5,1,6,.62) 78%,rgba(3,0,4,.92) 100%),linear-gradient(rgba(3,0,4,.7),transparent 16%,transparent 84%,rgba(3,0,4,.8))}
+.sheen{position:fixed;inset:0;z-index:41;pointer-events:none;overflow:hidden}
+.sheen::before{content:"";position:absolute;top:-20%;bottom:-20%;width:30%;left:-40%;background:linear-gradient(105deg,transparent,rgba(255,235,240,.035),rgba(221,4,4,.045),transparent);transform:skewX(-14deg);animation:sh 11s ease-in-out infinite}
+@keyframes sh{0%,55%{left:-40%}100%{left:130%}}
+
+.frame{position:fixed;inset:12px;z-index:45;pointer-events:none;border:1px solid rgba(248,239,242,.06)}
+.frame i{position:absolute;width:18px;height:18px;border:0 solid var(--red);filter:var(--glow);opacity:.9}
+.frame i:nth-child(1){left:-1px;top:-1px;border-top-width:2px;border-left-width:2px}.frame i:nth-child(2){right:-1px;top:-1px;border-top-width:2px;border-right-width:2px}
+.frame i:nth-child(3){left:-1px;bottom:-1px;border-bottom-width:2px;border-left-width:2px}.frame i:nth-child(4){right:-1px;bottom:-1px;border-bottom-width:2px;border-right-width:2px}
+
+:focus-visible{outline:2px solid var(--red);outline-offset:3px}
+
+/* Top bar */
+.top{
+  position:relative;
+  z-index:60;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:calc(24px + env(safe-area-inset-top,0px)) 4vw 16px;
+  font:500 11px var(--mono);
+  letter-spacing:.2em;
+  text-transform:uppercase;
+  background:linear-gradient(rgba(5,1,6,.96),rgba(5,1,6,.6) 70%,transparent);
+}
+.lg{display:flex;align-items:center;gap:12px;text-decoration:none;color:var(--ink);font:700 12px var(--disp);letter-spacing:.2em}
+.lg i{display:grid;place-items:center;width:34px;height:34px;border:1.5px solid var(--red);font:700 11px var(--disp);font-style:normal;filter:var(--glow);letter-spacing:0;background:rgba(11,4,12,.7)}
+.back-btn{
+  display:inline-flex;
+  align-items:center;
+  gap:10px;
+  text-decoration:none;
+  color:#fff;
+  border:1px solid var(--red);
+  padding:10px 20px;
+  font:600 11px var(--mono);
+  letter-spacing:.2em;
+  text-transform:uppercase;
+  background:rgba(11,4,12,.75);
+  box-shadow:0 0 18px rgba(221,4,4,.35);
+  transition:.3s;
+}
+.back-btn:hover{
+  background:var(--red);
+  box-shadow:0 0 34px rgba(221,4,4,.85);
+  transform:translateX(-3px);
+}
+.back-btn i{font-style:normal;transition:transform .3s}
+.back-btn:hover i{transform:translateX(-4px)}
+
+/* Main Container */
+main{
+  position:relative;
+  z-index:10;
+  max-width:1040px;
+  margin:0 auto;
+  padding:3vh 4vw 8vh;
+}
+
+.idx{
+  font:600 12px var(--mono);
+  letter-spacing:.24em;
+  color:#fff;
+  background:rgba(8,2,9,.92);
+  border:1px solid var(--crim);
+  border-left:3px solid var(--red);
+  padding:6px 14px;
+  width:max-content;
+  margin:0 0 16px;
+  text-transform:uppercase;
+}
+
+h1{
+  margin:0 0 12px;
+  font:900 clamp(2.8rem,7vw,5.6rem)/.92 var(--name);
+  letter-spacing:.012em;
+  text-transform:uppercase;
+}
+h1 .o{-webkit-text-stroke:2px var(--red);color:#0b030c;text-shadow:0 0 20px rgba(221,4,4,.55)}
+h1 .f{color:#fff;text-shadow:0 0 24px rgba(221,4,4,.65),0 3px 16px rgba(0,0,0,.8)}
+
+.lead{
+  max-width:38em;
+  color:var(--dim);
+  margin:0 0 32px;
+  font-size:14.5px;
+  background:linear-gradient(90deg,rgba(8,2,9,.82),rgba(8,2,9,.42));
+  padding:1.4vh 1.4vw;
+  border-left:2px solid rgba(156,2,5,.85);
+}
+
+/* Quick contact pills */
+.quick-contacts{
+  display:flex;
+  gap:12px;
+  flex-wrap:wrap;
+  margin-bottom:28px;
+}
+.quick-pill{
+  display:inline-flex;
+  align-items:center;
+  gap:10px;
+  font:500 11px var(--mono);
+  letter-spacing:.18em;
+  text-transform:uppercase;
+  color:#fff;
+  text-decoration:none;
+  padding:10px 18px;
+  border:1px solid var(--crim);
+  background:rgba(11,4,12,.7);
+  transition:.3s;
+}
+.quick-pill:hover{
+  border-color:var(--red);
+  box-shadow:0 0 20px rgba(221,4,4,.6);
+  transform:translateY(-2px);
+}
+.quick-pill.primary{
+  border-color:var(--red);
+  background:rgba(221,4,4,.18);
+  box-shadow:0 0 16px rgba(221,4,4,.35);
+}
+
+/* Form Container Card */
+.form-shell{
+  position:relative;
+  background:rgba(13,5,15,.94);
+  border:1px solid rgba(221,4,4,.75);
+  box-shadow:0 0 0 1px rgba(0,0,0,.6), 0 0 38px rgba(221,4,4,.3);
+  padding:0;
+  overflow:hidden;
+  border-radius:2px;
+  margin-bottom:36px;
+}
+.form-bar{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:12px 20px;
+  background:rgba(8,2,9,.95);
+  border-bottom:1px solid rgba(156,2,5,.7);
+  font:500 11px var(--mono);
+  letter-spacing:.2em;
+  text-transform:uppercase;
+  color:var(--dim);
+}
+.form-dots{
+  display:flex;
+  gap:8px;
+  align-items:center;
+}
+.form-dots span{
+  width:9px;
+  height:9px;
+  border-radius:50%;
+  display:inline-block;
+}
+.form-dots span:nth-child(1){background:var(--red);box-shadow:0 0 8px var(--red)}
+.form-dots span:nth-child(2){background:#ff9800}
+.form-dots span:nth-child(3){background:#4caf50}
+
+.form-body{
+  position:relative;
+  min-height:680px;
+  background:#0b040c;
+}
+.form-body iframe{
+  display:block;
+  width:100%;
+  height:760px;
+  border:0;
+  background:#0b040c;
+  filter: invert(90%) hue-rotate(180deg) contrast(110%);
+}
+.form-loading{
+  position:absolute;
+  inset:0;
+  display:grid;
+  place-items:center;
+  background:rgba(11,4,12,.95);
+  color:#fff;
+  font:500 12px var(--mono);
+  letter-spacing:.2em;
+  text-transform:uppercase;
+  z-index:2;
+  transition:opacity .4s ease, visibility .4s ease;
+}
+.form-loading.loaded{
+  opacity:0;
+  visibility:hidden;
+  pointer-events:none;
+}
+.loader-spinner{
+  width:42px;
+  height:42px;
+  border:2px solid rgba(221,4,4,.2);
+  border-top-color:var(--red);
+  border-radius:50%;
+  animation:spin 1s linear infinite;
+  margin-bottom:16px;
+}
+@keyframes spin{to{transform:rotate(360deg)}}
+
+/* Footer inside page */
+footer.foot{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  flex-wrap:wrap;
+  gap:16px;
+  padding-top:20px;
+  border-top:1px solid rgba(156,2,5,.4);
+  font:400 11px var(--mono);
+  letter-spacing:.2em;
+  text-transform:uppercase;
+  color:var(--dim);
+}
+footer.foot a{
+  color:var(--ink);
+  text-decoration:none;
+  transition:.3s;
+}
+footer.foot a:hover{
+  color:var(--red);
+}
+
+@media(max-width:768px){
+  .top{padding:20px 5vw 12px}
+  main{padding:2vh 5vw 6vh}
+  .form-body iframe{height:820px}
+  footer.foot{flex-direction:column;align-items:flex-start}
+}
+</style>
+</head>
+<body>
+
+<canvas id="c"></canvas>
+<div class="vig"></div>
+<div class="grain"></div>
+<div class="sheen"></div>
+<div class="frame" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
+
+<header class="top">
+  <a class="lg" href="anushka-horizon_6_4.html#home" aria-label="Anushka Dabhade, home">
+    <i>AD</i><span>Anushka Dabhade</span>
+  </a>
+  <a class="back-btn" href="anushka-horizon_6_4.html#home">
+    <i>&larr;</i><span>Back to portfolio</span>
+  </a>
+</header>
+
+<main>
+  <div class="idx">09 &mdash; Contact &amp; Connect</div>
+  <h1><span class="o">LET&rsquo;S</span> <span class="f">TALK</span></h1>
+  <p class="lead">
+    Whether you&rsquo;re interested in AI/ML research collaborations, agentic systems, edge deployment, internships, or just want to discuss an idea &mdash; fill out the form below and I will get back to you promptly.
+  </p>
+
+  <div class="quick-contacts">
+    <a class="quick-pill primary" href="mailto:anushkadabhade134@gmail.com">
+      &#9993; anushkadabhade134@gmail.com
+    </a>
+    <a class="quick-pill" href="https://www.linkedin.com/in/anushka-dabhade-936b16349" target="_blank" rel="noopener">
+      LinkedIn &#8599;
+    </a>
+    <a class="quick-pill" href="https://github.com/Anushkad134" target="_blank" rel="noopener">
+      GitHub &#8599;
+    </a>
+  </div>
+
+  <div class="form-shell">
+    <div class="form-bar">
+      <div class="form-dots">
+        <span></span><span></span><span></span>
+      </div>
+      <div>Google Form &middot; Direct Response Pipeline</div>
+      <div>&#9889; Ahmedabad, India</div>
+    </div>
+
+    <div class="form-body" id="form-container">
+      <div class="form-loading" id="loader">
+        <div style="text-align:center">
+          <div class="loader-spinner"></div>
+          <div>Loading contact form&hellip;</div>
+        </div>
+      </div>
+      <iframe
+        id="gform"
+        src="https://docs.google.com/forms/d/e/1FAIpQLSdPrGqhSA_kpWr5Sn8ko-MU9GZtPnFBHOYFsKmGnTM3jFpXYA/viewform?embedded=true"
+        title="Anushka Dabhade Contact Form"
+        frameborder="0"
+        marginheight="0"
+        marginwidth="0">
+        Loading&hellip;
+      </iframe>
+    </div>
+  </div>
+
+  <footer class="foot">
+    <div>&copy; 2026 Anushka Dabhade &middot; AI / ML Engineer</div>
+    <div>
+      <a href="anushka-horizon_6_4.html#contact">&larr; Return to Main Page</a>
+    </div>
+  </footer>
+</main>
+
+<script>
+  // Hide loader once iframe is ready
+  var frameEl = document.getElementById('gform');
+  var loaderEl = document.getElementById('loader');
+  if (frameEl) {
+    frameEl.addEventListener('load', function() {
+      if (loaderEl) loaderEl.classList.add('loaded');
+    });
+    // Fallback timeout in case load event was already triggered or slow
+    setTimeout(function() {
+      if (loaderEl) loaderEl.classList.add('loaded');
+    }, 2400);
+  }
+
+  // Interactive subtle grid / particle canvas matching the theme
+  (function(){
+    var cvs = document.getElementById('c');
+    if (!cvs) return;
+    var ctx = cvs.getContext('2d');
+    var w, h, pts = [];
+    function resize() {
+      w = cvs.width = window.innerWidth;
+      h = cvs.height = window.innerHeight;
+      pts = [];
+      var count = Math.floor(w * h / 36000);
+      for (var i = 0; i < count; i++) {
+        pts.push({
+          x: Math.random() * w,
+          y: Math.random() * h,
+          vx: (Math.random() - .5) * .35,
+          vy: (Math.random() - .5) * .35,
+          r: Math.random() * 1.5 + .8
+        });
+      }
+    }
+    window.addEventListener('resize', resize);
+    resize();
+
+    function render() {
+      ctx.clearRect(0, 0, w, h);
+      // Subtle red glow in the corner
+      var rad = ctx.createRadialGradient(w * .85, h * .2, 10, w * .85, h * .2, w * .6);
+      rad.addColorStop(0, 'rgba(221,4,4,0.12)');
+      rad.addColorStop(1, 'rgba(11,4,12,0)');
+      ctx.fillStyle = rad;
+      ctx.fillRect(0, 0, w, h);
+
+      ctx.fillStyle = 'rgba(248, 239, 242, 0.45)';
+      for (var i = 0; i < pts.length; i++) {
+        var p = pts[i];
+        p.x += p.vx;
+        p.y += p.vy;
+        if (p.x < 0) p.x = w;
+        if (p.x > w) p.x = 0;
+        if (p.y < 0) p.y = h;
+        if (p.y > h) p.y = 0;
+        ctx.beginPath();
+        ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+        ctx.fill();
+      }
+      requestAnimationFrame(render);
+    }
+    render();
+  })();
+</script>
+</body>
+</html>
